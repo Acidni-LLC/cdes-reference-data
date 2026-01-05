@@ -1,0 +1,124 @@
+name: Validate Reference Data
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - "terpenes/**"
+            - "cannabinoids/**"
+            - "strains/**"
+            - "labs/**"
+    pull_request:
+        branches: [main]
+        paths:
+            - "terpenes/**"
+            - "cannabinoids/**"
+            - "strains/**"
+            - "labs/**"
+
+jobs:
+    validate:
+        name: Validate Reference Data
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.11"
+
+            - name: Validate JSON files
+              run: |
+                  echo "Validating JSON structure..."
+                  find . -name '*.json' -not -path './node_modules/*' | while read file; do
+                    if ! python3 -m json.tool "$file" > /dev/null 2>&1; then
+                      echo "❌ $file: Invalid JSON"
+                      exit 1
+                    fi
+                    echo "✅ $file"
+                  done
+
+            - name: Validate CAS numbers
+              run: |
+                  cat << 'EOF' > validate_cas.py
+                  import json
+                  import sys
+                  from pathlib import Path
+
+                  def validate_cas(cas: str) -> bool:
+                      """Validate CAS number checksum."""
+                      if not cas:
+                          return False
+                      digits = cas.replace('-', '')
+                      if not digits.isdigit() or len(digits) < 5:
+                          return False
+                      
+                      check = int(digits[-1])
+                      total = sum(int(d) * (i + 1) for i, d in enumerate(reversed(digits[:-1])))
+                      return total % 10 == check
+
+                  errors = []
+
+                  for data_dir in ['terpenes', 'cannabinoids']:
+                      data_path = Path(data_dir)
+                      if not data_path.exists():
+                          continue
+                          
+                      for json_file in data_path.glob('**/*.json'):
+                          try:
+                              data = json.loads(json_file.read_text())
+                              entries = data.get('terpenes', data.get('cannabinoids', [data] if isinstance(data, dict) else data))
+                              if isinstance(entries, dict):
+                                  entries = [entries]
+                              
+                              for entry in entries:
+                                  if isinstance(entry, dict) and 'casNumber' in entry:
+                                      cas = entry['casNumber']
+                                      if cas and not validate_cas(cas):
+                                          errors.append(f"{json_file}: Invalid CAS '{cas}' for {entry.get('name', 'unknown')}")
+                          except json.JSONDecodeError as e:
+                              errors.append(f"{json_file}: Invalid JSON - {e}")
+                          except Exception as e:
+                              errors.append(f"{json_file}: Error - {e}")
+
+                  if errors:
+                      print("❌ Validation errors:")
+                      for err in errors:
+                          print(f"  {err}")
+                      sys.exit(1)
+                  else:
+                      print("✅ All CAS numbers valid")
+                  EOF
+
+                  python validate_cas.py
+
+            - name: Check for required fields
+              run: |
+                  echo "Checking required fields in terpene entries..."
+                  python3 << 'EOF'
+                  import json
+                  from pathlib import Path
+
+                  required_fields = ['id', 'name', 'casNumber']
+                  errors = []
+
+                  for json_file in Path('terpenes').glob('*.json'):
+                      data = json.loads(json_file.read_text())
+                      entries = data.get('terpenes', [])
+                      
+                      for entry in entries:
+                          for field in required_fields:
+                              if field not in entry:
+                                  errors.append(f"{json_file}: Missing '{field}' in {entry.get('name', 'unknown')}")
+
+                  if errors:
+                      print("❌ Missing required fields:")
+                      for err in errors:
+                          print(f"  {err}")
+                      exit(1)
+                  else:
+                      print("✅ All required fields present")
+                  EOF
