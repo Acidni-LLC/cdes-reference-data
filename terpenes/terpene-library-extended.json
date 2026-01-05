@@ -1,0 +1,277 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CDES Approved Terpene Library - Extended",
+  "description": "Additional terpenes found in cannabis (supplement to main library)",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-05",
+  "license": "CC0-1.0",
+  "terpenes": [
+    {
+      "id": "terpene:camphene",
+      "name": "Camphene",
+      "casNumber": "79-92-5",
+      "pubchemId": "6616",
+      "molecularFormula": "C10H16",
+      "molecularWeight": 136.24,
+      "category": "monoterpene",
+      "boilingPoint": { "celsius": 159, "fahrenheit": 318 },
+      "aroma": ["earthy", "woody", "herbal", "camphor"],
+      "naturalSources": ["camphor", "cypress", "valerian"],
+      "effects": [
+        { "effect": "anti-inflammatory", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "anti-oxidant", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "less-common",
+      "typicalRange": { "min": 0.01, "max": 0.2, "unit": "percent" }
+    },
+    {
+      "id": "terpene:carene",
+      "name": "Delta-3-Carene",
+      "alternateName": ["3-Carene", "δ-3-Carene"],
+      "casNumber": "13466-78-9",
+      "pubchemId": "26049",
+      "molecularFormula": "C10H16",
+      "molecularWeight": 136.24,
+      "category": "monoterpene",
+      "boilingPoint": { "celsius": 168, "fahrenheit": 334 },
+      "aroma": ["sweet", "pine", "cedar", "citrus"],
+      "naturalSources": ["rosemary", "basil", "bell peppers", "cedar"],
+      "effects": [
+        { "effect": "anti-inflammatory", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "bone-healing", "strength": "weak", "evidence": "preliminary" }
+      ],
+      "prevalence": "less-common",
+      "typicalRange": { "min": 0.01, "max": 0.3, "unit": "percent" },
+      "notes": "May cause dry mouth and eyes."
+    },
+    {
+      "id": "terpene:caryophyllene-oxide",
+      "name": "Caryophyllene Oxide",
+      "casNumber": "1139-30-6",
+      "pubchemId": "14350",
+      "molecularFormula": "C15H24O",
+      "molecularWeight": 220.35,
+      "category": "sesquiterpenoid",
+      "boilingPoint": { "celsius": 280, "fahrenheit": 536 },
+      "aroma": ["woody", "spicy", "herbal"],
+      "naturalSources": ["lemon balm", "eucalyptus"],
+      "effects": [
+        { "effect": "anti-fungal", "strength": "strong", "evidence": "clinical" },
+        { "effect": "anti-inflammatory", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "less-common",
+      "typicalRange": { "min": 0.01, "max": 0.2, "unit": "percent" },
+      "notes": "Oxidation product of beta-caryophyllene. What drug dogs smell."
+    },
+    {
+      "id": "terpene:eucalyptol",
+      "name": "Eucalyptol",
+      "alternateName": ["1,8-Cineole", "Cineole"],
+      "casNumber": "470-82-6",
+      "pubchemId": "2758",
+      "molecularFormula": "C10H18O",
+      "molecularWeight": 154.25,
+      "category": "monoterpenoid",
+      "boilingPoint": { "celsius": 176, "fahrenheit": 349 },
+      "aroma": ["eucalyptus", "mint", "cooling", "spicy"],
+      "naturalSources": ["eucalyptus", "tea tree", "bay leaves", "sage"],
+      "effects": [
+        { "effect": "anti-inflammatory", "strength": "moderate", "evidence": "clinical" },
+        { "effect": "bronchodilator", "strength": "moderate", "evidence": "clinical" },
+        { "effect": "pain-relief", "strength": "weak", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" },
+      "notes": "Rare in cannabis. Found in Super Silver Haze."
+    },
+    {
+      "id": "terpene:fenchol",
+      "name": "Fenchol",
+      "alternateName": ["Fenchyl Alcohol"],
+      "casNumber": "1632-73-1",
+      "pubchemId": "14309",
+      "molecularFormula": "C10H18O",
+      "molecularWeight": 154.25,
+      "category": "monoterpenoid",
+      "boilingPoint": { "celsius": 201, "fahrenheit": 394 },
+      "aroma": ["pine", "camphor", "lemon"],
+      "naturalSources": ["basil", "fennel"],
+      "effects": [
+        { "effect": "anti-bacterial", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" }
+    },
+    {
+      "id": "terpene:geraniol",
+      "name": "Geraniol",
+      "casNumber": "106-24-1",
+      "pubchemId": "637566",
+      "molecularFormula": "C10H18O",
+      "molecularWeight": 154.25,
+      "category": "monoterpenoid",
+      "boilingPoint": { "celsius": 230, "fahrenheit": 446 },
+      "aroma": ["floral", "rose", "citrus", "sweet"],
+      "naturalSources": ["roses", "geraniums", "lemongrass", "citronella"],
+      "effects": [
+        { "effect": "anti-oxidant", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "neuroprotective", "strength": "weak", "evidence": "preliminary" }
+      ],
+      "prevalence": "less-common",
+      "typicalRange": { "min": 0.01, "max": 0.2, "unit": "percent" },
+      "notes": "Naturally repels insects."
+    },
+    {
+      "id": "terpene:guaiol",
+      "name": "Guaiol",
+      "casNumber": "489-86-1",
+      "pubchemId": "227829",
+      "molecularFormula": "C15H26O",
+      "molecularWeight": 222.37,
+      "category": "sesquiterpenoid",
+      "boilingPoint": { "celsius": 92, "fahrenheit": 198 },
+      "aroma": ["pine", "woody", "rose"],
+      "naturalSources": ["guaiacum", "cypress"],
+      "effects": [
+        { "effect": "anti-inflammatory", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "anti-bacterial", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" }
+    },
+    {
+      "id": "terpene:isopulegol",
+      "name": "Isopulegol",
+      "casNumber": "89-79-2",
+      "pubchemId": "7033",
+      "molecularFormula": "C10H18O",
+      "molecularWeight": 154.25,
+      "category": "monoterpenoid",
+      "boilingPoint": { "celsius": 212, "fahrenheit": 414 },
+      "aroma": ["mint", "cooling", "herbal"],
+      "naturalSources": ["mint", "lemongrass"],
+      "effects": [
+        { "effect": "anti-anxiety", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "gastroprotective", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" },
+      "notes": "Precursor to menthol."
+    },
+    {
+      "id": "terpene:nerolidol",
+      "name": "Nerolidol",
+      "alternateName": ["trans-Nerolidol", "Peruviol"],
+      "casNumber": "7212-44-4",
+      "pubchemId": "5284507",
+      "molecularFormula": "C15H26O",
+      "molecularWeight": 222.37,
+      "category": "sesquiterpenoid",
+      "boilingPoint": { "celsius": 122, "fahrenheit": 252 },
+      "aroma": ["floral", "woody", "citrus", "apple"],
+      "naturalSources": ["neroli", "ginger", "jasmine", "tea tree"],
+      "effects": [
+        { "effect": "sedating", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "anti-parasitic", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "anti-fungal", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "less-common",
+      "typicalRange": { "min": 0.01, "max": 0.2, "unit": "percent" },
+      "notes": "May enhance skin penetration of other compounds."
+    },
+    {
+      "id": "terpene:terpineol",
+      "name": "Alpha-Terpineol",
+      "alternateName": ["α-Terpineol", "Terpineol"],
+      "casNumber": "98-55-5",
+      "pubchemId": "17100",
+      "molecularFormula": "C10H18O",
+      "molecularWeight": 154.25,
+      "category": "monoterpenoid",
+      "boilingPoint": { "celsius": 219, "fahrenheit": 426 },
+      "aroma": ["floral", "lilac", "citrus", "apple"],
+      "naturalSources": ["lilac", "pine", "eucalyptus"],
+      "effects": [
+        { "effect": "relaxing", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "sedating", "strength": "weak", "evidence": "anecdotal" },
+        { "effect": "anti-bacterial", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "less-common",
+      "typicalRange": { "min": 0.01, "max": 0.2, "unit": "percent" }
+    },
+    {
+      "id": "terpene:valencene",
+      "name": "Valencene",
+      "casNumber": "4630-07-3",
+      "pubchemId": "9855795",
+      "molecularFormula": "C15H24",
+      "molecularWeight": 204.35,
+      "category": "sesquiterpene",
+      "boilingPoint": { "celsius": 123, "fahrenheit": 253 },
+      "aroma": ["citrus", "orange", "sweet", "woody"],
+      "naturalSources": ["valencia oranges", "tangerines"],
+      "effects": [
+        { "effect": "anti-inflammatory", "strength": "weak", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" },
+      "notes": "Named after Valencia oranges. Natural insect repellent."
+    },
+    {
+      "id": "terpene:borneol",
+      "name": "Borneol",
+      "casNumber": "507-70-0",
+      "pubchemId": "64685",
+      "molecularFormula": "C10H18O",
+      "molecularWeight": 154.25,
+      "category": "monoterpenoid",
+      "boilingPoint": { "celsius": 210, "fahrenheit": 410 },
+      "aroma": ["camphor", "mint", "herbal"],
+      "naturalSources": ["camphor", "rosemary", "mint"],
+      "effects": [
+        { "effect": "pain-relief", "strength": "moderate", "evidence": "clinical" },
+        { "effect": "anti-inflammatory", "strength": "moderate", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" },
+      "notes": "Used in traditional Chinese medicine."
+    },
+    {
+      "id": "terpene:sabinene",
+      "name": "Sabinene",
+      "casNumber": "3387-41-5",
+      "pubchemId": "18818",
+      "molecularFormula": "C10H16",
+      "molecularWeight": 136.24,
+      "category": "monoterpene",
+      "boilingPoint": { "celsius": 163, "fahrenheit": 325 },
+      "aroma": ["spicy", "woody", "citrus", "pine"],
+      "naturalSources": ["black pepper", "nutmeg", "carrot seeds"],
+      "effects": [
+        { "effect": "anti-oxidant", "strength": "moderate", "evidence": "preliminary" },
+        { "effect": "anti-inflammatory", "strength": "weak", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.1, "unit": "percent" }
+    },
+    {
+      "id": "terpene:phytol",
+      "name": "Phytol",
+      "casNumber": "150-86-7",
+      "pubchemId": "5280435",
+      "molecularFormula": "C20H40O",
+      "molecularWeight": 296.53,
+      "category": "diterpene",
+      "boilingPoint": { "celsius": 203, "fahrenheit": 397 },
+      "aroma": ["floral", "grassy"],
+      "naturalSources": ["green tea", "chlorophyll"],
+      "effects": [
+        { "effect": "relaxing", "strength": "weak", "evidence": "preliminary" },
+        { "effect": "anti-oxidant", "strength": "weak", "evidence": "preliminary" }
+      ],
+      "prevalence": "rare",
+      "typicalRange": { "min": 0.01, "max": 0.05, "unit": "percent" },
+      "notes": "Breakdown product of chlorophyll."
+    }
+  ]
+}
